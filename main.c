@@ -9,25 +9,36 @@ int main()
 	int random_number = rand() % 100 + 1;
 
 	int nombre_utilisateur;
-	printf("Veuillez rentrer un nombre entier : \n" );
+	printf("Veuillez rentrer un nombre entier entre 1 et 100 : \n");
 	scanf("%d", &nombre_utilisateur);
+
 
 	while (count < 10)
 	{
+		printf("Choisissez un nombre entier entre 1 et 100 :\n");
 		if (nombre_utilisateur < random_number)
 		{
 			printf("Votre nombre est trop petit! \n");
 			count = count + 1;
+			printf("Veuillez rentrer un nombre entier entre 1 et 100 : \n");
+			scanf("%d", &nombre_utilisateur);
+
 		}
 		else if (nombre_utilisateur > random_number)
 		{
 			printf("Votre nombre est trop grand \n");
 			count = count + 1;
+			printf("Veuillez rentrer un nombre entier entre 1 et 100 : \n");
+			scanf("%d", &nombre_utilisateur);
+			
+
 		}
 		else if (nombre_utilisateur == random_number)
 		{
-			("Bravo! \n");
+			printf("Bravo! \n");
 			count = count + 1;
+			printf("Veuillez rentrer un nombre entier entre 1 et 100 : \n");
+			scanf("%d", &nombre_utilisateur);
 			
 
 		}
