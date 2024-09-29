@@ -9,50 +9,56 @@ int main()
 	int random_number = rand() % 100 + 1;
 
 	int nombre_utilisateur;
-	printf("Veuillez rentrer uniquement un nombre entier entre 1 et 100 : \n");
-	scanf("%d", &nombre_utilisateur);
-
-//Essais resolution du double appel scanf lors de la saisies du nombre entier.
+	printf("\n\n----------Bienvenue dans el magico nombre (le numero magique)----------\n\n");
+	printf("\n\nVeuillez rentrer uniquement un nombre entier entre 1 et 100 :\n\n");
 	
-
 
 	while (count < 10)
 	{
 
 		if (scanf("%d", &nombre_utilisateur) != 1) 
 		{
-        	printf("Vous n'avez pas renseigner un nombre entier entre 1 et 100, le jeu se termine, veuillez le relancer !\n");
-        	return 1;
+        	printf("\n\nVous n'avez pas renseigner un nombre entier entre 1 et 100, le jeu se termine, veuillez le relancer !\n\n");
+        	return 1; // Fin du jeu si l'utilisateur rentre autre chose qu'un nombre entier.
         }
 
 		if (nombre_utilisateur < 1 || nombre_utilisateur > 100)
 		{
-			printf("Faites attention à bien renseigner un nombre entier entre 1 et 100 ! \n Allez-y :\n");
+			printf("\n\nFaites attention à bien renseigner un nombre entier entre 1 et 100 !\n\nAllez-y :\n\n");
 			count ++;
+			if (count == 10)
+			{
+				printf("\n\nLe nombre magique était %d. Merci de relancer le jeu.\n\n", random_number);
+				break;
+			}
 			continue;
 		}
 
 
 		if (nombre_utilisateur < random_number)
 		{
-			printf("Votre nombre est trop petit ! \n");
+			printf("\nVotre nombre est trop petit ! Veuillez l'augmenter.\n\n");
 		}
 		
 		else if (nombre_utilisateur > random_number)
 		{
-			printf("Votre nombre est trop grand ! \n");
+			printf("\nVotre nombre est trop grand ! Veuillez le diminuer.\n\n");
 		}
 		
-		else if (nombre_utilisateur == random_number)
+		else
 		{
-			printf("Bravo ! \n");
+			printf("\n\n-----Bravo !-----\n\n");
+			printf("\n\n-----Merci d'avoir utilisé ce jeu!-----\n\n");
 			break;
 		}
-	count ++;
-	if (count == 10)
-	{
-		printf("Vos 10 tentatives sont épuisées, le nombre magique était %d. \n Veuillez relancer le jeu. \n" , random_number);
-	}
+		count ++;
+		if (count == 10)
+		{
+			printf("\n\nVos 10 tentatives sont épuisées, le nombre magique était %d.\n\n Veuillez relancer le jeu.\n\n" , random_number);
+			break;
+		}
+
+		printf("Veuillez rentrer un nombre entier entre 1 et 100 :\n\n");
 
 	}
 
