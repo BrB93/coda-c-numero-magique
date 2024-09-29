@@ -35,9 +35,21 @@ int main()
 		else if (nombre_utilisateur == random_number)
 		{
 			printf("Bravo ! \n");
-			count = 10;
+			break;
 		}
 
+		else if (nombre_utilisateur > 100, nombre_utilisateur != int)
+		{
+			printf("Faites attention à bien renseigner un nombre entier entre 1 et 100 ! Allez-y :\n");
+			count = count + 1;
+			scanf("%d", &nombre_utilisateur);
+		}
+
+
+	}
+	if (count = 10)
+	{
+		printf("Vos 10 tentatives sont épuisées, Veuillez relancer le jeu. \n");
 	}
 
 	return 0;
